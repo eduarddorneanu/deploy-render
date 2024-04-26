@@ -24,9 +24,7 @@ const options = {
 
 const openapiSpecification = swaggerJsdoc(options);
 
-if (process.env.NODE_ENV !== "production") {
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification));
-}
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 app.use(routes);
 
